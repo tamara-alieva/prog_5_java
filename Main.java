@@ -41,7 +41,7 @@ public class Main {
 
         System.out.println();
         System.out.println("2) Исключение не возникает");
-        person.setName("Ivan");
+        person.setName("Иван");
         person.setBalance(7000);
         try {
             person.output();
@@ -57,9 +57,20 @@ public class Main {
         car_array[0] = new Car("Kia Rio");
         car_array[1] = new Car(buffer);
         car_array[2] = new Car("Volvo", true);
-        for (int i = 0; i < 3; i++)
+        int i, j;
+        for (i = 0; i < 3; i++)
             car_array[i].output();
+        
         System.out.println();
-
+        System.out.println("4) Двумерный массив объектов");
+        Person[][] person_array = new Person[2][2];
+        for (i = 0; i < 2; i++)
+            for (j = 0; j < 2; j++) {
+                person_array[i][j] = new Person("Владислав", 10000);
+            }
+        for (i = 0; i < 2; i++)
+            for (j = 0; j < 2; j++) {
+                person_array[i][j].output();
+            }
     }
 }
