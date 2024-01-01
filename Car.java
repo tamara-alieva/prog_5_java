@@ -80,9 +80,10 @@ public class Car {
     }
 
     public void output() {
-        if (this.brand.isEmpty()) {
-            System.out.println("Данные об автомобиле отсутствуют!");
-        } else {
+        if (this.brand.equals("")) {
+            throw new IllegalArgumentException("Отсутствует марка Автомобиля!");
+        }
+        else {
             System.out.println("Данные об автомобиле:");
             System.out.println("-Марка: " + this.brand);
             System.out.print("-Класс: ");

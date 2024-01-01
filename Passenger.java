@@ -52,14 +52,19 @@ public class Passenger extends Person {
 
     @Override
     public void output() {
-        System.out.println("Данные о пассажире:");
-        System.out.println("-Имя: " + this.getName());
-        System.out.println("-Баланс: " + this.getBalance());
-        System.out.print("-Способ оплаты: ");
-        if (this.getMethod()) {
-            System.out.println("Банковская карта\n");
-        } else {
-            System.out.println("Наличные\n");
+        if (this.getName().equals("")) {
+            throw new IllegalArgumentException("Отсутствует имя Пассажира!");
+        }
+        else {
+            System.out.println("Данные о пассажире:");
+            System.out.println("-Имя: " + this.getName());
+            System.out.println("-Баланс: " + this.getBalance());
+            System.out.print("-Способ оплаты: ");
+            if (this.getMethod()) {
+                System.out.println("Банковская карта\n");
+            } else {
+                System.out.println("Наличные\n");
+            }
         }
     }
 

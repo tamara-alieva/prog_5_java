@@ -62,8 +62,8 @@ public class Person {
     }
 
     public void output() {
-        if (this.name.isEmpty()) {
-            System.out.println("Данные о человеке отсутствуют!");
+        if (this.name.equals("")) {
+            throw new IllegalArgumentException("Отсутствует имя Человека!");
         } else {
             System.out.println("Данные о человеке:");
             System.out.println("-Имя: " + this.name);

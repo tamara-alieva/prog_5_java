@@ -69,11 +69,16 @@ public class Driver extends Person {
 
     @Override
     public void output() {
-        System.out.println("Данные о водителе:");
-        System.out.println("-Имя: " + this.getName());
-        System.out.println("-Баланс: " + this.getBalance());
-        System.out.println("-Количество лет опыта: " + this.getExperience());
-        System.out.println("-Количество выполненных заказов: " + this.getOrderAmount() + "\n");
+        if (this.getName().equals("")) {
+            throw new IllegalArgumentException("Отсутствует имя Водителя!");
+        }
+        else {
+            System.out.println("Данные о водителе:");
+            System.out.println("-Имя: " + this.getName());
+            System.out.println("-Баланс: " + this.getBalance());
+            System.out.println("-Количество лет опыта: " + this.getExperience());
+            System.out.println("-Количество выполненных заказов: " + this.getOrderAmount() + "\n");
+        }
     }
 
     public void givePayment(int payment) {
